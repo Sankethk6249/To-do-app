@@ -1,0 +1,11 @@
+Steps to publish
+Create the repo with the name above. On GitHub, use Add file → Create new file for each file. Type the full path, like backend/server.js, and GitHub creates the folders.
+Edit your contact details. In frontend/index.html, replace the email, GitHub, and phone placeholders under the EDIT comment, and fill in the README.
+Test locally if you can. Run cd backend && npm install && npm start, then open http://localhost:3000. Check:
+adding a task works, and an empty task shows an error
+checking a task moves it to Completed
+Edit saves with Enter and cancels with Esc
+Delete and Clear completed ask for confirmation
+refreshing the page keeps your tasks
+Deploy. For a quick hosted link, go to Settings → Pages, set Source to GitHub Actions, and push to main. For a real backend, use Render as in the README, then set API_URL in config.js.
+Submit. Send the live link and repo link. The task sheet only asks for a video if you want to add one.
