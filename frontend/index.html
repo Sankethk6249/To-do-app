@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TaskFlow: a to-do app with pending and completed lists. Developed by Sanketh Kumar." />
+  <meta name="author" content="Sanketh Kumar" />
+  <title>TaskFlow | To-Do App by Sanketh Kumar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo" aria-hidden="true">✓</span>TaskFlow</div>
+    <span id="storageBadge" class="badge" data-mode="loading">Connecting...</span>
+  </header>
+
+  <main class="page">
+    <!-- Dashboard hero -->
+    <section class="hero">
+      <div>
+        <p id="today" class="hero-date"></p>
+        <h1 id="greeting">Hello</h1>
+        <p id="heroLine" class="hero-line">Let's get things done.</p>
+      </div>
+      <div class="ring" role="img" aria-label="Completion progress">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <circle class="ring-bg" cx="40" cy="40" r="34" />
+          <circle id="ringFg" class="ring-fg" cx="40" cy="40" r="34" />
+        </svg>
+        <span id="ringText">0%</span>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" aria-label="Task statistics">
+      <div class="card stat total"><span>Total</span><strong id="statTotal">0</strong></div>
+      <div class="card stat pending"><span>Pending</span><strong id="statPending">0</strong></div>
+      <div class="card stat done"><span>Completed</span><strong id="statDone">0</strong></div>
+    </section>
+
+    <!-- Add task -->
+    <section class="card">
+      <form id="addForm" class="add-form" novalidate>
+        <label for="taskInput" class="sr-only">New task</label>
+        <input id="taskInput" type="text" maxlength="200" autocomplete="off" placeholder="What needs to be done?" />
+        <button type="submit" class="btn">Add task</button>
+      </form>
+      <p id="notice" class="notice" role="status"></p>
+    </section>
+
+    <!-- Views -->
+    <div class="tabs" role="tablist" aria-label="Task views">
+      <button class="tab active" role="tab" aria-selected="true" data-view="all">All <span id="countAll">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-view="pending">Pending <span id="countPending">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-view="completed">Completed <span id="countDone">0</span></button>
+    </div>
+
+    <!-- Pending Tasks -->
+    <section id="pendingSection" class="card">
+      <div class="section-head">
+        <h2>Pending Tasks</h2>
+        <span id="pendingCount" class="pill">0</span>
+      </div>
+      <ul id="pendingList" class="task-list"></ul>
+      <p id="pendingEmpty" class="empty" hidden>Nothing pending. Add a task above, or enjoy the free time.</p>
+    </section>
+
+    <!-- Completed Tasks -->
+    <section id="completedSection" class="card">
+      <div class="section-head">
+        <h2>Completed Tasks</h2>
+        <div class="head-right">
+          <span id="doneCount" class="pill">0</span>
+          <button id="clearCompleted" class="link-btn" type="button">Clear completed</button>
+        </div>
+      </div>
+      <ul id="completedList" class="task-list"></ul>
+      <p id="completedEmpty" class="empty" hidden>Completed tasks will show up here.</p>
+    </section>
+  </main>
+
+  <!-- Developer -->
+  <footer class="footer" id="contact">
+    <div class="card dev">
+      <div class="avatar" aria-hidden="true">S</div>
+      <div>
+        <p class="dev-by">Developed by <strong>Sanketh Kumar</strong></p>
+        <p class="muted small">B.Tech Computer Science Engineering, Sir M. Visvesvaraya College of Engineering (VTU)</p>
+        <ul class="links">
+          <!-- EDIT: replace the placeholders with your real details -->
+          <li><a href="https://www.linkedin.com/in/sanketh-k-387aa432a" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></li>
+          <li><a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> TaskFlow. Built for the Infobyte internship (Task 5).</p>
+  </footer>
+
+  <noscript>TaskFlow needs JavaScript to run.</noscript>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
